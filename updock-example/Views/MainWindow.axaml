@@ -3,18 +3,53 @@
         xmlns:vm="using:updock_example.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:views="using:updock_example.Views"
+        mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="800"
         x:Class="updock_example.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="updock_example">
-
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
-
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+        Title="画像ビューア">
+    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="ファイル(_F)">
+                <MenuItem Header="フォルダを開く(_O)" Command="{Binding OpenFolderCommand}" />
+            </MenuItem>
+        </Menu>
+        
+        <Design.DataContext>
+            <!-- This only sets the DataContext for the previewer in an IDE,
+                 to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+            <vm:MainWindowViewModel/>
+        </Design.DataContext>
+        
+        <Grid>
+            <!-- 行・列の定義 -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />  <!-- ファイルブラウザ -->
+                <ColumnDefinition Width="*" />    <!-- メイン表示 -->
+                <ColumnDefinition Width="250" />  <!-- プロパティ -->
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />      <!-- メイン領域 -->
+                <RowDefinition Height="150" />    <!-- サムネイル -->
+            </Grid.RowDefinitions>
+            
+            <!-- ファイルブラウザパネル -->
+            <views:FileBrowserPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" 
+                                   DataContext="{Binding FileBrowser}"/>
+            
+            <!-- メイン画像表示領域 -->
+            <views:ImageViewer Grid.Column="1" Grid.Row="0" 
+                              DataContext="{Binding ImageViewer}"/>
+            
+            <!-- プロパティパネル -->
+            <views:PropertyPanel Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" 
+                                DataContext="{Binding ImageProperties}"/>
+            
+            <!-- サムネイルプレビューパネル -->
+            <views:ThumbnailPanel Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" 
+                                 DataContext="{Binding Thumbnail}"/>
+        </Grid>
+    </DockPanel>
 </Window>

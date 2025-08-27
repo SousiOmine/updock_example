@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:updock_example.ViewModels"
+             x:Class="updock_example.Views.PropertyPanel"
+             x:DataType="vm:ImagePropertiesViewModel">
+  <Grid Margin="10">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    
+    <!-- ファイル名 -->
+    <TextBlock Grid.Column="0" Grid.Row="0" Text="ファイル名:" FontWeight="Bold" Margin="0,0,10,5"/>
+    <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding FileName}" Margin="0,0,0,5"/>
+    
+    <!-- ファイルサイズ -->
+    <TextBlock Grid.Column="0" Grid.Row="1" Text="ファイルサイズ:" FontWeight="Bold" Margin="0,0,10,5"/>
+    <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding FileSize}" Margin="0,0,0,5"/>
+    
+    <!-- 画像解像度 -->
+    <TextBlock Grid.Column="0" Grid.Row="2" Text="解像度:" FontWeight="Bold" Margin="0,0,10,5"/>
+    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding ImageResolution}" Margin="0,0,0,5"/>
+    
+    <!-- 最終更新日時 -->
+    <TextBlock Grid.Column="0" Grid.Row="3" Text="更新日時:" FontWeight="Bold" Margin="0,0,10,5"/>
+    <TextBlock Grid.Column="1" Grid.Row="3" Text="{Binding LastModified}" Margin="0,0,0,5"/>
+  </Grid>
+</UserControl>

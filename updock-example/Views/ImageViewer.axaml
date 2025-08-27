@@ -1,0 +1,15 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:updock_example.ViewModels"
+             x:Class="updock_example.Views.ImageViewer"
+             x:DataType="vm:ImageViewerViewModel">
+  <ScrollViewer Name="ScrollViewer"
+                HorizontalScrollBarVisibility="Auto" 
+                VerticalScrollBarVisibility="Auto">
+    <Image Name="MainImage"
+           Source="{Binding ImageBitmap}" 
+           Stretch="Uniform"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center"/>
+  </ScrollViewer>
+</UserControl>
