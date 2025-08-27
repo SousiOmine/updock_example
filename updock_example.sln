@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "updock-example", "updock-example\updock-example.csproj", "{556DB653-5A17-2714-264A-936E968057E7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{556DB653-5A17-2714-264A-936E968057E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{556DB653-5A17-2714-264A-936E968057E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{556DB653-5A17-2714-264A-936E968057E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{556DB653-5A17-2714-264A-936E968057E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FE925EE-AA36-4F5F-9740-06DD0DB27262}
+	EndGlobalSection
+EndGlobal
